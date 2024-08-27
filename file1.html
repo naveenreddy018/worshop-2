@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jumping Man Animation</title>
+    <style>
+        /* General body styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+/* Container to center the man */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Man container */
+.man {
+    position: relative;
+    width: 50px;
+    height: 100px;
+    animation: jump 2s infinite ease-in-out;
+}
+
+/* Parts of the man */
+.head, .body, .left-arm, .right-arm, .left-leg, .right-leg {
+    position: absolute;
+    background-color: black;
+}
+
+.head {
+    width: 50px;
+    height: 30px;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+}
+
+.body {
+    width: 20px;
+    height: 50px;
+    top: 30px;
+    left: 15px;
+}
+
+.left-arm, .right-arm {
+    width: 10px;
+    height: 30px;
+    top: 35px;
+}
+
+.left-arm {
+    left: -10px;
+    transform-origin: top right;
+    animation: arm-swing-left 2s infinite ease-in-out;
+}
+
+.right-arm {
+    right: -10px;
+    transform-origin: top left;
+    animation: arm-swing-right 2s infinite ease-in-out;
+}
+
+.left-leg, .right-leg {
+    width: 10px;
+    height: 40px;
+    top: 80px;
+}
+
+.left-leg {
+    left: 5px;
+    transform-origin: top right;
+    animation: leg-swing-left 2s infinite ease-in-out;
+}
+
+.right-leg {
+    left: 35px;
+    transform-origin: top left;
+    animation: leg-swing-right 2s infinite ease-in-out;
+}
+
+/* Keyframes for animations */
+
+/* Jumping up and down animation */
+@keyframes jump {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-50px);
+    }
+}
+
+/* Arm swinging animations */
+@keyframes arm-swing-left {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+}
+
+@keyframes arm-swing-right {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+}
+
+/* Leg swinging animations */
+@keyframes leg-swing-left {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+}
+
+@keyframes leg-swing-right {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="man">
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="left-arm"></div>
+            <div class="right-arm"></div>
+            <div class="left-leg"></div>
+            <div class="right-leg"></div>
+        </div>
+    </div>
+</body>
+</html>
